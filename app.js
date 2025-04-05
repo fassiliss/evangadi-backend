@@ -1,13 +1,15 @@
+require("dotenv").config();
+console.log("Loaded DB User:", process.env.USER);
+// console.log(process.env); 
+
 //Import express
 const express = require("express");
 
-require("dotenv").config();
-
 //Creating the server using express
 const app = express();
-//  const PORT = 6063;
+const PORT = 6063;
 
- const PORT =process.env.PORT || 6063;
+//  const PORT =process.env.PORT || 6063;
 
 // Import db connection
 const dbconnection = require("./db/dbconfig");
@@ -104,7 +106,7 @@ app.get("/create-table", (req, res) => {
 
 async function start() {
   try {
-    const result =await dbconnection.execute("select'test'");
+    const result = dbconnection.execute("select'test'");
     app.listen(PORT);
     console.log("database connected");
     console.log(`listing on ${PORT}`);

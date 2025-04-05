@@ -17,7 +17,7 @@ async function register(req, res) {
       .json({ msg: "Please provide all required fields" });
   }
   try {
-    const [user] = await dbconnection.query(
+    const [user] = dbconnection.query(
       "SELECT * FROM users WHERE username = ? OR email = ?",
       [username, email]
     ); // checking the user is already there or not
