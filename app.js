@@ -7,9 +7,9 @@ const express = require("express");
 
 //Creating the server using express
 const app = express();
-const PORT = 6063;
+// const PORT = 6063;
 
-//  const PORT =process.env.PORT || 6063;
+  const PORT =process.env.PORT || 6063;
 
 // Import db connection
 const dbconnection = require("./db/dbconfig");
